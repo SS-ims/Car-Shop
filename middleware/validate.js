@@ -41,7 +41,50 @@ const saveCar = (req, res, next) => {
   });
 };
 
+const saveStore = (req, res, next) => {
+  const validationRule = {
+    name: 'required|string',
+    manager: 'required|string',
+    number: 'required|integer',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
+
+const saveRepair = (req, res, next) => {
+  const validationRule = {
+    carName: 'required|string',
+    brand: 'required|string',
+    year: 'required|integer',
+    entryMonth: 'required|date',
+    RepairCost: 'required|integer',
+  };
+  validator(req.body, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+};
+
 module.exports = {
   saveUser,
-  saveCar
+  saveCar,
+  saveStore,
+  saveRepair,
 };

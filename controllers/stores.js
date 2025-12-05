@@ -27,7 +27,7 @@ const getSingle = async (req, res) => {
   }
 
   try {
-    const userId = new ObjectId(req.params.id);
+    const storeId = new ObjectId(req.params.id);
 
     const result = await mongodb
       .getDatabase()
