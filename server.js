@@ -7,6 +7,13 @@ const session = require("express-session");
 const GitHubStrategy = require("passport-github2").Strategy;
 const cors = require("cors");
 
+module.exports = app; // Export app for testing
+if (require.main === module) {
+    const port = process.env.PORT || 3000;
+    app.listen(port, () => {
+        console.log(`Server is running on port: ${port}`);
+    });
+}
 
 const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
