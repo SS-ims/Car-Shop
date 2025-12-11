@@ -5,7 +5,7 @@
     "description": "cars",
     "version": "1.0.0"
   },
-  "host": "car-shop-9fc2.onrender.com",
+  "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
     "http",
@@ -243,6 +243,12 @@
                 },
                 "price": {
                   "example": "any"
+                },
+                "miles": {
+                  "example": "any"
+                },
+                "customizable": {
+                  "example": "any"
                 }
               }
             }
@@ -324,6 +330,12 @@
                   "example": "any"
                 },
                 "price": {
+                  "example": "any"
+                },
+                "miles": {
+                  "example": "any"
+                },
+                "customizable": {
                   "example": "any"
                 }
               }
